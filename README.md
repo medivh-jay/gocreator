@@ -4,5 +4,7 @@ Starter installer
 #### use:
 
 ```go
-go get -i github.com/medivh-jay/gocreator
+go get github.com/medivh-jay/gocreator
+
+gocreator -m myapp
 ```
