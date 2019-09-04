@@ -1,0 +1,2 @@
+# gocreator
+Starter installer
