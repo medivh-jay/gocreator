@@ -33,7 +33,7 @@ func main() {
 	cmd.Stderr = os.Stderr
 	_ = cmd.Run()
 
-	path, _ := filepath.Abs(fmt.Sprintf("%s/%s/", filepath.Dir(os.Args[0]), module))
+	path, _ := filepath.Abs(fmt.Sprintf("%s/%s/", "./", module))
 	var confirm string
 	fmt.Printf("the directory will be traversed: %s, and all files ending in .go will be modified, Confirm?[Y/N]: ", path)
 	_, _ = fmt.Scanln(&confirm)
@@ -41,7 +41,7 @@ func main() {
 		return
 	}
 
-        git, _ := filepath.Abs(path + "/.git")
+	git, _ := filepath.Abs(path + "/.git")
 	_ = os.RemoveAll(git)
 	err := filepath.Walk(path, func(path string, info os.FileInfo, err error) error {
 		if err != nil {
