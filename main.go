@@ -41,7 +41,8 @@ func main() {
 		return
 	}
 
-	_ = os.RemoveAll(path + "/.git")
+        git, _ := filepath.Abs(path + "/.git")
+	_ = os.RemoveAll(git)
 	err := filepath.Walk(path, func(path string, info os.FileInfo, err error) error {
 		if err != nil {
 			return err
