@@ -61,7 +61,7 @@ func main() {
 			}
 
 			_ = exec.Command("go", "fmt", path).Run()
-			fmt.Println(path, " ", " complete!")
+			fmt.Println("gocreator: ", "complete->", path)
 		}
 
 		if info.Name() == "go.mod" {
@@ -71,7 +71,7 @@ func main() {
 			}
 
 			content := string(buf)
-			content = strings.ReplaceAll(content, `"starter`, fmt.Sprintf(`%s`, module))
+			content = strings.ReplaceAll(content, `starter`, fmt.Sprintf(`%s`, module))
 			err = ioutil.WriteFile(path, []byte(content), 0755)
 			if err != nil {
 				return err
